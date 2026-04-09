@@ -17,6 +17,6 @@ public class CleanExtract {
             }
         }
 
-        return res.toString().replaceAll("\\s+", " ").trim();
+        return res.toString().replaceAll("\\s+", " ").trim() + ".";
     }
 }
