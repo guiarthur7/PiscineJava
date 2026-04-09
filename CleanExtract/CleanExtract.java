@@ -1,22 +1,16 @@
 public class CleanExtract {
     public static String extract(String s) {
-        if (s == null ||s.length() == 0) return "";
-
+        if (s == null) return "";
         String res = "";
+        for (String bloc : s.split("\\|")) {
+            int debut = bloc.indexOf('.');
+            int fin = bloc.lastIndexOf('.');
 
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
-            if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
-                res += c;
-            }
-            else if (c == '|') {
-                res += ' ';
-            }
-            else if (c == ' ') {
-                res += c;
+            if (debut != -1 && fin > debut) {
+                res += bloc.substring(debut + 1, fin).trim() + " ";
             }
         }
 
-        return res.toString().replaceAll("\\s+", " ").trim() + ".";
+        return res.replaceAll("\\s+", " ").trim();
     }
 }
