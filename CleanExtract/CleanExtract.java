@@ -1,17 +1,35 @@
 public class CleanExtract {
     public static String extract(String s) {
-        if (s == null) return "";
-        String res = "";
-        for (String bloc : s.split("\\|")) {
-            int debut = bloc.indexOf('.');
-            int fin = bloc.lastIndexOf('.');
-            if (debut != -1 && fin > debut) {
-                res += bloc.substring(debut + 1, fin).trim() + " ";
+        if (s == null) {
+            return null;
+        }
+
+        String[] parts = s.split("\\|");
+        String result = "";
+
+        for (int i = 0; i < parts.length; i++) {
+            String part = parts[i].trim();
+            String extracted = "";
+
+            int firstDot = part.indexOf('.');
+            int lastDot = part.lastIndexOf('.');
+
+            if (firstDot == -1) {
+                extracted = part;
+            } else if (firstDot == lastDot) {
+                extracted = part.substring(firstDot + 1).trim();
+            } else {
+                extracted = part.substring(firstDot + 1, lastDot).trim();
             }
-            else if (!s.contains(".")) {
-                res += bloc.trim() + " ";
+
+            if (!extracted.isEmpty()) {
+                if (!result.isEmpty()) {
+                    result += " ";
+                }
+                result += extracted;
             }
         }
-        return res.replaceAll("\\s+", " ").trim();
+
+        return result;
     }
 }
