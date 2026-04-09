@@ -5,13 +5,12 @@ public class CleanExtract {
         for (String bloc : s.split("\\|")) {
             int debut = bloc.indexOf('.');
             int fin = bloc.lastIndexOf('.');
-
             if (debut != -1 && fin > debut) {
                 res += bloc.substring(debut + 1, fin).trim() + " ";
             }
-        }
-        if (res.trim().isEmpty() && !s.contains(".")) {
-            return s.replace('|', ' ').replaceAll("\\s+", " ").trim();
+            else if (!s.contains(".")) {
+                res += bloc.trim() + " ";
+            }
         }
         return res.replaceAll("\\s+", " ").trim();
     }
