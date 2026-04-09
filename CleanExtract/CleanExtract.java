@@ -8,6 +8,8 @@ public class CleanExtract {
 
             if (debut != -1 && fin > debut) {
                 res += bloc.substring(debut + 1, fin).trim() + " ";
+            } else {
+                res = bloc;
             }
         }
 
