@@ -4,6 +4,7 @@ public class Palindrome {
         for (int i = s.length() -1; i >= 0; i--) {
             res += s.charAt(i);
         }
-        return s.equals(res);
+        s = s.toLowerCase();
+        return s.equals(res.toLowerCase());
     }
 }
