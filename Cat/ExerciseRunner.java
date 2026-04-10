@@ -8,7 +8,7 @@ public class ExerciseRunner {
         PrintStream printStream = new PrintStream(outputStream);
         System.setOut(printStream);
 
-        Cat.cat(new String[]{"input.txt"});
+        Cat.cat(new String[]{"input"});
         String output = outputStream.toString();
         // Reset out to stdout
         System.setOut(stdout);
