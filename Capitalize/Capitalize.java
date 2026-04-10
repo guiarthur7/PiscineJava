@@ -6,6 +6,7 @@ public class Capitalize {
         if (args.length < 2) return;
         String contenu = Files.readString(Path.of(args[0]));
         String[] mots = contenu.trim().replaceAll("\\s+", " ").split(" ");
+
         for (int i = 0; i < mots.length; i++) {
             if (mots[i].length() > 0) {
                 mots[i] = mots[i].substring(0, 1).toUpperCase() + mots[i].substring(1).toLowerCase();

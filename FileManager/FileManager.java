@@ -1,0 +1,18 @@
+import java.io.*;
+import java.nio.file.*;
+
+public class FileManager {
+    public static void createFile(String fileName, String content) throws IOException {
+        Files.writeString(Path.of(fileName), content);
+    }
+    public static String getContentFile(String fileName) throws IOException {
+        return Files.readString(Path.of(fileName));
+    }
+    public static void deleteFile(String fileName) {
+        try {
+            Files.deleteIfExists(Path.of(fileName));
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
+    }
+}
