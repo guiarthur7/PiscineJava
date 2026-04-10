@@ -5,10 +5,12 @@ public class ComputeArray {
         int[] res = new int[array.length];
 
         for (int i = 0; i < array.length; i++) {
-            if (Math.floorMod(array[i], 3) == 0) {
+            int rest = array[i] % 3;
+
+            if (rest == 0) {
                 res[i] = array[i] * 5;
             }
-            else if (Math.floorMod(array[i], 3) == 1) {
+            else if (rest == 1) {
                 res[i] = array[i] + 7;
             }
             else {
