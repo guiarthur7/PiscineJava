@@ -56,12 +56,11 @@ public class CelestialObject {
     public String toString() {
         return String.format("%s is positioned at (%.3f, %.3f, %.3f)", this.name, this.x, this.y, this.z);
     }
-    public boolean equals(CelestialObject c) {
-        if (this.x == c.x && this.y == c.y && this.z == c.z && this.name.equals(c.name)) {
-            return true;
-        } else {
-            return false;
-        }
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof CelestialObject)) return false;
+        CelestialObject c = (CelestialObject) o;
+        return x == c.x && y == c.y && z == c.z && Objects.equals(name, c.name);
     }
     @Override
     public int hashCode() {
