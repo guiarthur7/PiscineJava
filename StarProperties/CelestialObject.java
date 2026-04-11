@@ -1,6 +1,6 @@
 public class CelestialObject {
-    double x, y, z;
-    String name;
+    public double x, y, z;
+    public String name;
     public CelestialObject() {
         this.x = 0.0;
         this.y = 0.0;
