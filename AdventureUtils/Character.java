@@ -52,18 +52,16 @@ public class Character {
 
     public static String printStatus() {
         String separator = "------------------------------------------\n";
-        StringBuilder sb = new StringBuilder();
-        sb.append(separator);
-
         if (allCharacters.isEmpty()) {
-            sb.append("Nobody's fighting right now !\n");
-        } else {
-            sb.append("Characters currently fighting : \n");
-            for (Character c : allCharacters) {
-                sb.append(" - ").append(c.toString()).append("\n");
-            }
+            return separator + "Nobody's fighting right now !\n" + separator;
         }
 
+        StringBuilder sb = new StringBuilder();
+        sb.append(separator);
+        sb.append("Characters currently fighting : \n");
+        for (Character c : allCharacters) {
+            sb.append(" - ").append(c.toString()).append("\n");
+        }
         sb.append(separator);
         return sb.toString();
     }
