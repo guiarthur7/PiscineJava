@@ -51,7 +51,7 @@ public class Character {
     }
 
     public static String printStatus() {
-        String separator = "------------------------------------------";
+        String separator = "------------------------------------------ ";
         StringBuilder s = new StringBuilder();
         s.append(separator).append("\n");
 
