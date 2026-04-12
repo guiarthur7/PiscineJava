@@ -56,7 +56,7 @@ public class Character {
         s.append(separator).append("\n");
 
         if (allCharacters.isEmpty()) {
-            s.append("Nobody's fighting right now !\n");
+            s.append("Nobody's fighting right now ! \n");
         } else {
             s.append("Characters currently fighting : \n");
             for (Character c : allCharacters) {
