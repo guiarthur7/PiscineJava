@@ -1,4 +1,4 @@
 public interface Tank {
-    int getSheild();
+    int getShield();
     int getHealCapacity();
 }
