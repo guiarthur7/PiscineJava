@@ -51,34 +51,34 @@ public class Character {
     }
 
     public static String printStatus() {
-        String separator = "------------------------------------------";
-        String result = separator + "\n";
+        String line = "------------------------------------------\n";
+        StringBuilder sb = new StringBuilder();
+        sb.append(line);
 
         if (allCharacters.isEmpty()) {
-            result += "Nobody's fighting right now !\n";
+            sb.append("Nobody's fighting right now !\n");
         } else {
-            result += "Characters currently fighting : \n";
+            sb.append("Characters currently fighting : \n");
             for (Character c : allCharacters) {
-                result += " - " + c.toString() + "\n";
+                sb.append(" - ").append(c.toString()).append("\n");
             }
         }
 
-        result += separator + "\n";
-        return result;
+        sb.append(line);
+        return sb.toString();
     }
 
     public static Character fight(Character c1, Character c2) {
-        while (c1.getCurrentHealth() > 0 && c2.getCurrentHealth() > 0) {
+        while (c1.currentHealth > 0 && c2.currentHealth > 0) {
             c1.attack(c2);
-            if (c2.getCurrentHealth() <= 0) {
+            if (c2.currentHealth <= 0) {
                 return c1;
             }
-
             c2.attack(c1);
-            if (c1.getCurrentHealth() <= 0) {
+            if (c1.currentHealth <= 0) {
                 return c2;
             }
         }
-        return (c1.getCurrentHealth() > 0) ? c1 : c2;
+        return c1.currentHealth > 0 ? c1 : c2;
     }
 }
