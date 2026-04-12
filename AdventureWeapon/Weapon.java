@@ -1,5 +1,5 @@
 public class Weapon {
-    private String name;
+    private final String name;
     public int damage;
 
     public Weapon(String name, int damage) {
