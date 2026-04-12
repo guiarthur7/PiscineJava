@@ -10,6 +10,14 @@ public class Character {
         this.currentHealth = maxHealth;
     }
 
+    public int getCurrentHealth() {
+        return this.currentHealth;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
     @Override
     public String toString() {
         if (this.currentHealth > 0) {
