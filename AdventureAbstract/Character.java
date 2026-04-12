@@ -27,7 +27,7 @@ public abstract class Character {
         return this.maxHealth;
     }
 
-    public void setCurrentHealth(int newValue) {
+    protected void setCurrentHealth(int newValue) {
         this.currentHealth = newValue;
     }
 
