@@ -51,9 +51,9 @@ public class Character {
     }
 
     public static String printStatus() {
-        String line = "------------------------------------------\n";
+        String separator = "------------------------------------------";
         StringBuilder sb = new StringBuilder();
-        sb.append(line);
+        sb.append(separator).append("\n");
 
         if (allCharacters.isEmpty()) {
             sb.append("Nobody's fighting right now !\n");
@@ -64,7 +64,7 @@ public class Character {
             }
         }
 
-        sb.append(line);
+        sb.append(separator);
         return sb.toString();
     }
 
