@@ -66,16 +66,20 @@ public abstract class Character {
         return status.toString();
     }
 
-    public static Character fight(Character c1, Character c2) throws DeadCharacterException{
-        while (c1.currentHealth > 0 && c2.currentHealth > 0) {
-            c1.attack(c2);
-            if (c2.currentHealth <= 0) {
-                return c1;
+    public static Character fight(Character c1, Character c2) {
+        try {
+            while (c1.currentHealth > 0 && c2.currentHealth > 0) {
+                c1.attack(c2);
+                if (c2.currentHealth <= 0) {
+                    return c1;
+                }
+                c2.attack(c1);
+                if (c1.currentHealth <= 0) {
+                    return c2;
+                }
             }
-            c2.attack(c1);
-            if (c1.currentHealth <= 0) {
-                return c2;
-            }
+        } catch (DeadCharacterException e) {
+            System.out.println(e.getMessage());
         }
         return c1.currentHealth > 0 ? c1 : c2;
     }
