@@ -7,16 +7,16 @@ public class Weapon {
         this.damage = damage;
     }
 
-    public String getWeaponName() {
+    public String getName() {
         return this.name;
     }
 
-    public int getWeaponDamage() {
+    public int getDamage() {
         return this.damage;
     }
 
     @Override
     public String toString() {
-        return String.format("%s deals %d damages", this.getWeaponName(), this.getWeaponDamage());
+        return String.format("%s deals %d damages", this.getName(), this.getDamage());
     }
 }

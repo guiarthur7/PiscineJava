@@ -16,7 +16,7 @@ public class Monster extends Character {
     @Override
     public void attack(Character character) {
         int damage = (this.getWeapon() != null)
-                ? this.getWeapon().getWeaponDamage()
+                ? this.getWeapon().getDamage()
                 : 7;
         character.takeDamage(damage);
     }
