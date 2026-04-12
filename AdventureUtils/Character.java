@@ -51,21 +51,18 @@ public class Character {
     }
 
     public static String printStatus() {
-        String separator = "------------------------------------------";
-        StringBuilder s = new StringBuilder();
-        s.append(separator).append("\n");
-
+        StringBuilder status = new StringBuilder();
+        status.append("------------------------------------------\n");
         if (allCharacters.isEmpty()) {
-            s.append("Nobody's fighting right now !\n");
+            status.append("Nobody's fighting right now !\n");
         } else {
-            s.append("Characters currently fighting :\n");
-            for (Character c : allCharacters) {
-                s.append(" - ").append(c.toString()).append("\n");
+            status.append("Characters currently fighting :\n");
+            for (Character character : allCharacters) {
+                status.append(String.format(" - %s\n", character.toString()));
             }
         }
-
-        s.append(separator);
-        return s.toString();
+        status.append("------------------------------------------\n");
+        return status.toString();
     }
 
     public static Character fight(Character c1, Character c2) {
