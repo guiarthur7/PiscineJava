@@ -51,19 +51,20 @@ public class Character {
     }
 
     public static String printStatus() {
-        String separator = "------------------------------------------\n";
+        String separator = "------------------------------------------";
+        String result = separator + "\n";
+
         if (allCharacters.isEmpty()) {
-            return separator + "Nobody's fighting right now !\n" + separator;
+            result += "Nobody's fighting right now !\n";
+        } else {
+            result += "Characters currently fighting : \n";
+            for (Character c : allCharacters) {
+                result += " - " + c.toString() + "\n";
+            }
         }
 
-        StringBuilder sb = new StringBuilder();
-        sb.append(separator);
-        sb.append("Characters currently fighting : \n");
-        for (Character c : allCharacters) {
-            sb.append(" - ").append(c.toString()).append("\n");
-        }
-        sb.append(separator);
-        return sb.toString();
+        result += separator + "\n";
+        return result;
     }
 
     public static Character fight(Character c1, Character c2) {
