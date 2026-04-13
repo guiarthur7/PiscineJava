@@ -8,6 +8,10 @@ public class FormatDate {
 
     public static String formatToFullText(LocalDateTime dateTime) {
 
+        if (dateTime == null) {
+            return null;
+        }
+
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM", Locale.FRANCE);
 
         int annee = dateTime.getYear();
@@ -21,6 +25,10 @@ public class FormatDate {
     }
 
     public static String formatSimple(LocalDate date) {
+
+        if (date == null) {
+            return null;
+        }
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM", Locale.ITALIAN);
 
