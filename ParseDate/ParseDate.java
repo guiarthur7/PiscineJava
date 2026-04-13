@@ -24,11 +24,13 @@ public class ParseDate {
         int minute = Integer.parseInt(s[1]);
         int seconde = Integer.parseInt(s[2]);
 
-        if (stringDate.contains("du soir")) {
+        String lowerDate = stringDate.toLowerCase();
+
+        if (lowerDate.contains("soir") || lowerDate.contains("après-midi")) {
             if (heure != 12) {
                 heure += 12;
             }
-        } else if (stringDate.contains("du matin")) {
+        } else if (lowerDate.contains("matin")) {
             if (heure == 12) {
                 heure = 0;
             }
