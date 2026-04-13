@@ -4,7 +4,7 @@ public class RegexReplace {
 
     public static String removeUnits(String input) {
         if (input == null) return null;
-        return input.replaceAll("(?<=\\d)\\s[cm€]", "");
+        return input = input.replaceAll("(?<=\\d)\\s+cm", "");
     }
 
     public static String obfuscateEmail(String email) {
