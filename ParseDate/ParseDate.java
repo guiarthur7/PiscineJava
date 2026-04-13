@@ -26,7 +26,7 @@ public class ParseDate {
 
         String lowerDate = stringDate.toLowerCase();
 
-        if (lowerDate.contains("du soir")) {
+        if (lowerDate.contains("du soir") || lowerDate.contains("de l'après-midi")) {
             if (heure != 12) {
                 heure += 12;
             }
