@@ -22,7 +22,7 @@ public class FormatDate {
 
     public static String formatSimple(LocalDate date) {
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM", Locale.ITALIAN);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM", Locale.ITALIAN);
 
         String mois = date.format(formatter);
         int jour = date.getDayOfMonth();
