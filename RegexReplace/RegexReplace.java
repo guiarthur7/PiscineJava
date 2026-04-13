@@ -14,20 +14,26 @@ public class RegexReplace {
         String user = parts[0];
         String domain = parts[1];
 
-        if (user.contains(",") || user.contains("-")) {
-            user = user.replaceAll("(?<=[,-]).", "*");
-        } else if (user.length() > 3) {
-            user = user.substring(0, user.length() - 3) + "***";
+        if (user.length() > 3) {
+            user = user.substring(0, 3) + user.substring(3).replaceAll(".", "*");
+        } else {
+            user = user.replaceAll(".", "*");
         }
 
         String[] d = domain.split("\\.");
-        if (d.length == 3) {
-            domain = d[0].replaceAll(".", "*") + "." + d[1] + "." + d[2].replaceAll(".", "*");
-        } else if (d.length == 2) {
-            String tld = d[1].matches("com|org|net") ? d[1] : d[1].replaceAll(".", "*");
-            domain = d[0].replaceAll(".", "*") + "." + tld;
+        StringBuilder res = new StringBuilder();
+
+        for (int i = 0; i < d.length; i++) {
+            if (d[i].length() == 2) {
+                res.append(d[i]);
+            } else {
+                res.append(d[i].replaceAll(".", "*"));
+            }
+            if (i < d.length - 1) {
+                res.append(".");
+            }
         }
 
-        return user + "@" + domain;
+        return user + "@" + res.toString();
     }
 }
