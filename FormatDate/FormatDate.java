@@ -40,6 +40,9 @@ public class FormatDate {
     }
 
     public static String formatIso(LocalTime time) {
+        if (time == null) {
+            return null;
+        }
         return time.toString();
     }
 }
