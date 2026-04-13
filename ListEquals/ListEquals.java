@@ -5,7 +5,10 @@ public class ListEquals {
         if (list1 == null || list2 == null) {
             return false;
         }
-        if (list1 == null && list2 == null || list1.size() != list2.size()) {
+        if (list1 == null && list2 == null) {
+            return true;
+        }
+        if (list1.size() != list2.size()) {
             return false;
         }
 
