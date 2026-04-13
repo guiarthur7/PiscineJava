@@ -9,6 +9,9 @@ public class ParseDate {
     }
 
     public static LocalDate parseFullTextFormat(String stringDate) {
+        if (stringDate == null) {
+            return null;
+        }
         DateTimeFormatter Formatter = DateTimeFormatter.ofPattern("EEEE d MMMM yyyy", Locale.FRENCH);
         return LocalDate.parse(stringDate, Formatter);
 
