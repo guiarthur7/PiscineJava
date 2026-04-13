@@ -19,7 +19,11 @@ public class DifferenceBetweenDate {
         }
         Period period = Period.between(date1, date2);
 
-        return period;
+        if (period.isNegative()) {
+            return period.negated();
+        } else {
+            return period;
+        }
     }
 
     public static Long numberOfHoursBetweenDateTime(LocalDateTime dateTime1, LocalDateTime dateTime2) {
