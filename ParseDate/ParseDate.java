@@ -18,18 +18,22 @@ public class ParseDate {
         if (stringDate == null) {
             return null;
         }
-        String[] parts = stringDate.split("\\D+");
 
-        int heure = Integer.parseInt(parts[0]);
-        int minute = Integer.parseInt(parts[1]);
-        int seconde = Integer.parseInt(parts[2]);
+        String[] s = stringDate.split("\\D+");
+        int heure = Integer.parseInt(s[0]);
+        int minute = Integer.parseInt(s[1]);
+        int seconde = Integer.parseInt(s[2]);
 
         if (stringDate.contains("du soir")) {
-            heure += 12;
-        } else if (stringDate.contains("du matin") && heure == 12) {
-            heure = 0;
+            if (heure != 12) {
+                heure += 12;
+            }
+        } else if (stringDate.contains("du matin")) {
+            if (heure == 12) {
+                heure = 0;
+            }
         }
-        LocalTime time = LocalTime.of(heure, minute, seconde);
-        return time;
+
+        return LocalTime.of(heure, minute, seconde);
     }
 }
