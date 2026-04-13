@@ -13,7 +13,7 @@ public class Excalibur {
         }
         return INSTANCE;
     }
-    private String getName() {
+    public String getName() {
         return this.name;
     }
 }
