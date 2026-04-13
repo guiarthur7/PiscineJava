@@ -1,7 +1,6 @@
 public class Car implements Transport {
-
     @Override
     public int getDistance() {
-        return 100;
+        return 600;
     }
 }

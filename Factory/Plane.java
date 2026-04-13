@@ -1,3 +1,6 @@
 public class Plane implements Transport {
-    public int getDistance() { return 1000; }
+    @Override
+    public int getDistance() {
+        return 10000;
+    }
 }
