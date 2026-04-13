@@ -26,7 +26,7 @@ public class ParseDate {
 
         String lowerDate = stringDate.toLowerCase();
 
-        if (lowerDate.contains("du soir") || lowerDate.contains("après-midi") || lowerDate.contains("of evening") || lowerDate.contains("afternoon") || lowerDate.contains("PM")) {
+        if (lowerDate.contains("du soir") || lowerDate.contains("après-midi") || lowerDate.contains("the evening") || lowerDate.contains("afternoon") || lowerDate.contains("PM")) {
             if (heure != 12) {
                 heure += 12;
             }
@@ -35,7 +35,6 @@ public class ParseDate {
                 heure = 0;
             }
         }
-
         return LocalTime.of(heure, minute, seconde);
     }
 }
