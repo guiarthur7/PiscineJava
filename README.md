@@ -1,6 +1,5 @@
 # 🐠 Piscine Java
 
-Une collection de 70+ exercices pratiques en Java - des concepts fondamentaux aux patterns avancés.
 
 ## 📚 Catégories d'exercices
 
@@ -107,23 +106,3 @@ Concepts variés et applications pratiques.
 - **Wedding** - Logique complexe
 - **KeepTheChange** - Calculs financiers
 - **CleanExtract** - Nettoyage de données
-
-## � Utilisation
-
-Chaque exercice est dans son propre répertoire avec une classe `ExerciseRunner`.
-
-```bash
-# Compiler et exécuter
-cd AdventureCharacter
-javac *.java
-java ExerciseRunner
-```
-
-## ⚙️ Prérequis
-
-- Java Development Kit (JDK) 8+
-- IDE ou éditeur de texte (VS Code, IntelliJ, etc.)
-
----
-
-**70+ exercices pour maîtriser Java** 🚀
