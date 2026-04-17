@@ -5,7 +5,7 @@
 
 ### 🎮 Adventure Series - OOP
 
-Explorez les concepts de programmation orientée objet à travers une série d'exercices en thème RPG/aventure.
+POO.
 
 - **AdventureCharacter** - Classes de base et héritage
 - **AdventureMonster** - Polymorphisme  
